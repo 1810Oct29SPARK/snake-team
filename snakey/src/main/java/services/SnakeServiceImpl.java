@@ -6,7 +6,7 @@ import beans.Snake;
 import daos.SnakesDAO;
 import daos.SnakesDAOImpl;
 
-public class SnakeServiceImpl {
+public class SnakeServiceImpl implements SnakeService {
 
 	public SnakeServiceImpl() {
 		
