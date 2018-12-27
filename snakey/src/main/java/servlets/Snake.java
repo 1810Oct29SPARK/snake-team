@@ -1,16 +1,24 @@
 package servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import services.SnakeService;
+import services.SnakeServiceImpl;
 
 /**
  * Servlet implementation class Snake
  */
 public class Snake extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public ObjectMapper om = new ObjectMapper();
+	 SnakeService snakeservice= new SnakeServiceImpl();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -25,7 +33,14 @@ public class Snake extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		switch (request.getRequestURI()) {
+		case "/snakey/snake":
+		int id = Integer.parseInt(request.getParameter("id"));
+		response.getWriter().write(om.writeValueAsString(snakeservice.getSnakeByID(id)));
+		break;
+		case "/snakey/snakes":
+			response.getWriter().write(om.writeValueAsString(snakeservice.getAllSnakes()));
+		}
 	}
 
 	/**
