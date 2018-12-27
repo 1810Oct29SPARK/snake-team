@@ -11,7 +11,7 @@ import java.util.List;
 import Util.ConnectionUtil;
 import beans.Snake;
 
-public class SnakesDAOImpl {
+public class SnakesDAOImpl implements SnakesDAO {
 
 	public SnakesDAOImpl() {
 		// TODO Auto-generated constructor stub
@@ -107,7 +107,7 @@ public class SnakesDAOImpl {
 
 	}
 
-	public void updateEmployee(Snake s) {
+	public void updateSnake(Snake s) {
 		// TODO Auto-generated method stub
 		String sql = "UPDATE SNAKE SET FIRSTNAME = ?, SPECIES=?, AGE=? H_ID=? WHERE SNAKE_ID = ?";
 

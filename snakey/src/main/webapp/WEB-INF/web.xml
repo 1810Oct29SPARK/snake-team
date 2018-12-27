@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>snakey</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+
+  <servlet>
+    <description></description>
+    <display-name>Snake</display-name>
+    <servlet-name>Snake</servlet-name>
+    <servlet-class>servlets.Snake</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Snake</servlet-name>
+    <url-pattern>/Snake</url-pattern>
+    <url-pattern>/snake</url-pattern>
+    <url-pattern>/snakes</url-pattern>
+  </servlet-mapping>
 </web-app>
